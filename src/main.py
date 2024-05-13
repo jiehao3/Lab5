@@ -1,6 +1,7 @@
 from threading import Thread
 from hal import hal_keypad as keypad
 from hal import hal_lcd as LCD
+import led_control
 
 #Empty list to store sequence of keypad presses
 password = []
@@ -29,6 +30,7 @@ def main():
     # Start the keypad scanning which will run forever in an infinite while(True) loop in a new Thread "keypad_thread"
     keypad_thread = Thread(target=keypad.get_key)
     keypad_thread.start()
+    #led_control.init()
 
 
 # Main entry point
